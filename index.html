@@ -1,0 +1,240 @@
+<html>
+  <head>
+    <title>Test</title>
+
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">-->
+    <meta charset="utf8"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    
+    <link rel="stylesheet" href="myCss.css">
+
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+
+      $.get('http://127.0.0.1:3000/',function(data){
+        console.log(data);
+        var str = '<ul>';
+        data.forEach( row =>{
+          str += `<li>${row.name}`
+          if(row.branch && row.branch.length > 0){
+            str += '<ul>'
+            row.branch.forEach( r2 =>{
+              str += `<li>${r2.name}</li>`
+            })
+            str += '</ul>'
+          }
+          str += '</li>'
+        })
+
+        str += '<ul>';
+        $(".aa").append(str);
+
+      })
+
+    });
+
+    </script>
+  </head>
+<body>
+  <script>
+	function toggleSidebar(){
+		document.getElementById("nav").classList.toggle('active');
+	}
+  </script>
+	<div id="myNav">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div id="footer">
+			<div class="menu_icon">
+				<img border="0" class="menu_icon_image"></img>
+				<spen class="menu_icon_text">NAME</spen>
+			</div>
+			<div class="drop-down-menu">
+				<ul class="drop-down-menu">
+				
+				<li>
+				  <spen href="#">測試測試</spen>
+				  <ul>
+					<li>
+					  <spen href="#">服務據點服務據點服務據點服務據點服務據點</spen>
+					  <ul>
+						<li><a href="#">服務據點</a></li>
+						<li><a href="#">服務客戶</a></li>
+						<li><a href="#">服務地區</a></li>
+						<li><a href="#">徵才資訊</a></li>
+					  </ul>
+					</li>
+					<li><a href="#">服務客戶</a></li>
+					<li><a href="#">服務地區</a></li>
+					<li><a href="#">徵才資訊</a></li>
+				  </ul>
+				</li>
+				</ul>
+			</div>
+			<div class="drop-down-menu1" style="border-radius: 25px;">
+				<ul class="drop-down-menu">
+				<li>
+				  <spen href="#">ABCDEFG</spen>
+				  <ul>
+					<li><a href="#">服務據點服務據點服務據點服務據點服務據點</a></li>
+					<li><a href="#">服務客戶</a></li>
+					<li><a href="#">服務地區</a></li>
+					<li><a href="#">徵才資訊</a></li>
+				  </ul>
+				</li>
+				</ul>
+			</div>
+			<div class="drop-down-menu2">
+				<table>
+				<tr>
+					<td>
+						<div class="right" align="left">
+					<font color="#122490" style="font-family: Microsoft JhengHei;">電子郵件或電話</div>
+					</td>
+					<td>
+						<div class="right" align="left">
+					<font color="#122490" style="font-family: Microsoft JhengHei;">密碼</div>
+					</td>
+					<td>
+
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" style="border-style:dashed;border-color:#5798ad;border-width:1.5px"></input>
+					</td>
+					<td>
+						<div>
+							<input type="text" style="border-style:dashed;border-color:#5798ad;border-width:1.5px"></input>
+						</div>
+					</td>
+					<td>
+						<div>
+							<input type="button" class="signin" value="登入"  style="color:;"/>
+						</div>
+					</td>
+				</tr>	
+				</table>
+			  </div>
+			</div>
+		</nav>
+	</div>
+  
+  <div id="nav" >
+		<input type="checkbox" id="menu"/>
+		<label for="menu" class="nav-icon" style="color:#FFFFFF" onclick="toggleSidebar()">&#9776;</label>
+		
+		<div class="multi-level">
+			<div class="item">
+				<input type="checkbox" id="A"/>
+				<img src="images/Arrow.png" class="arrow"><label for="A">A</label>
+						
+				<ul>
+					<li><img src="images/check.png" class="arrow"><a href="#">服務據點</a></li>
+					<li><img src="images/check.png" class="arrow"><a href="#">服務客戶</a></li>
+					<li><img src="images/check.png" class="arrow"><a href="#">服務地區</a></li>
+					<li><img src="images/check.png" class="arrow"><a href="#">徵才資訊</a></li>
+				</ul>
+			</div>
+			
+			<div class="item">
+                <input type="checkbox" id="B"/>
+                <img src="images/Arrow.png" class="arrow"><label for="B">B</label>
+                
+                <ul>
+                    <li><div class="sub-item">
+                        <input type="checkbox" id="B-A"/>
+                        <img src="images/Arrow.png" class="arrow"><label for="B-A">系統整合</label>
+                        
+                        <ul>
+                            <li><div class="sub-item">
+								<input type="checkbox" id="C-A"/>
+								<img src="images/Arrow.png" class="arrow"><label for="C-A">Magento與POS訂單系統整合</label>
+									
+								<ul>
+									<li><a href="#">Magento與CRM客戶管理系統整合</a></li>
+									<li><a href="#">SEO Magento與ERP管理系統整合</a></li>
+									<li><a href="#">Magento金流串接服務</a></li>
+								</ul>
+							</div></li>
+                            <li><img src="images/check.png" class="arrow"><a href="#">Magento與CRM客戶管理系統整合</a></li>
+                            <li><img src="images/check.png" class="arrow"><a href="#">Magento與ERP管理系統整合</a></li>
+							<li><div class="sub-item">
+								<input type="checkbox" id="C-B"/>
+								<img src="images/Arrow.png" class="arrow"><label for="C-B">DD</label>
+									
+								<ul>
+									<li><div class="sub-item">
+										<input type="checkbox" id="D-A"/>
+										<img src="images/Arrow.png" class="arrow"><label for="D-A">DDD</label>
+											
+										<ul>
+											<li><div class="sub-item">
+												<input type="checkbox" id="E-A"/>
+												<img src="images/Arrow.png" class="arrow"><label for="E-A">DDDD</label>
+													
+												<ul>
+													<li><div class="sub-item">
+														<input type="checkbox" id="F-A"/>
+														<img src="images/Arrow.png" class="arrow"><label for="F-A">DDDDD</label>
+															
+														<ul>
+															<li><a href="#">DDDDDD</a></li>
+														</ul>
+													</div></li>
+												</ul>
+											</div></li>
+										</ul>
+									</div></li>
+								</ul>
+							</div>
+							</li>
+                        </ul>
+                    </div></li>
+                    <li><div class="sub-item">
+                        <input type="checkbox" id="B-B"/>
+                        <img src="images/Arrow.png" class="arrow"><label for="B-B">專業網頁設計</label>
+                        
+                        <ul>
+                            <li><a href="#">響應式網頁設計 (Responsive Web Design)</a></li>
+                            <li><a href="#">手機網站設計</a></li>
+							<li><a href="#">WordPress 網頁設計</a></li>
+                        </ul>
+                        
+                    </div></li>
+					<li><div class="sub-item">
+                        <input type="checkbox" id="B-C"/>
+                        <img src="images/Arrow.png" class="arrow"><label for="B-C">網路行銷服務</label>
+                        
+                        <ul>
+                            <li><a href="#">Amazon亞馬遜網路商城</a></li>
+                            <li><a href="#">社群媒體行銷</a></li>
+							<li><div class="sub-item">
+									<input type="checkbox" id="C-C"/>
+									<img src="images/Arrow.png" class="arrow"><label for="C-C">SEO 搜尋引擎優化</label>
+									
+									<ul>
+										<li><a href="#">在地SEO</a></li>
+										<li><a href="#">SEO 搜尋引擎優化</a></li>
+									</ul>
+								</div>
+							</li>
+                        </ul>
+                        
+                    </div></li>
+					<li><div class="sub-item">
+                        <input type="checkbox" id="B-C"/>
+                        <img src="images/check.png" class="arrow"><label for="B-D"><a href="#">網站客製開發</a></label>
+
+                        
+                    </div></li>                    
+                </ul>
+            </div>
+			
+		</div> <!-- End of multi-level -->
+	</div>
+ 
+
+
+</body>
+</html>
